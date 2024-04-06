@@ -1,0 +1,19 @@
+.description {
+    padding: 10px;
+}
+
+.description img {
+    width: 100px;
+    height:  100px;
+    border-radius: 30px;
+}
+
+.contacts {
+    padding-left: 15px;
+}
+
+.formSummaryError {
+    border: solid rgb(128, 0, 32) 2px;
+    padding: 5px;
+    color: rgb(52, 8, 97);
+}

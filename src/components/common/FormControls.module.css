@@ -1,0 +1,25 @@
+
+.error Textarea {
+    border: dashed red 2px;
+}
+.error Input {
+    border: dashed rgb(94, 2, 2) 2px;
+}
+.error span {
+    color: darkgoldenrod
+}
+
+.formSummaryError {
+    border: solid rgb(128, 0, 32) 2px;
+    padding: 5px;
+    color: rgb(52, 8, 97);
+}
+
+.cap img{
+    width: 170px;
+    height: 100px;
+}
+
+
+
+
