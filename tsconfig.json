@@ -1,4 +1,4 @@
-{
+/* {
   "compilerOptions": {
     "target": "es5",
     "lib": [
@@ -23,4 +23,16 @@
   "include": [
     "src"
   ]
-}
+} */
+{
+  "compilerOptions": {
+  "target": "es5",
+  "lib": ["es6", "dom"],
+  "jsx": "preserve",
+  "module": "commonjs",
+  "moduleResolution": "node",
+  "experimentalDecorators": true,
+  "allowSyntheticDefaultImports": true
+  },
+  "include": ["src"]
+  }
