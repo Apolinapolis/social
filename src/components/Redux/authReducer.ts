@@ -5,14 +5,6 @@ import { authAPI, securityAPI } from "../../API/api";
 const SET_USER_DATA = "SET_USER_DATA"
 const GET_CAPTCHA_URL_SUCCESS = "GET_CAPTCHA_URL_SUCCESS"
 
-/* export type initialStateType2 = {
-  userId: number | null
-  email: string | null
-  login: string | null
-  isAuth: boolean | null
-  captchaUrl: string | null
-} */
-
 let initialState = {
   userId: null as number | null ,
   email: null as string | null,

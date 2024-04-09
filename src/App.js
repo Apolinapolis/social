@@ -47,7 +47,7 @@ componentWillUnmount() {
           <Route exact path="" element={<ProfileContainer/>}/>
             <Route path="/profile/:userId?" element={<ProfileContainer/>}/>
             <Route path="/dialogs" element={<DialogsContainer/>}/>
-            <Route path="/users" element={<UsersContainer/>}/>
+            <Route path="/users" element={<UsersContainer pageTitle={'Самураи'}/>}/>
             <Route path="/news" element={<News />} />
             <Route path="/music" element={<Music />} />
             <Route path="/settings" element={<Settings />} />
