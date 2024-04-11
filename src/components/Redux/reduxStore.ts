@@ -8,7 +8,6 @@ import usersReducer from "./usersReducer";
 import authReducer from "./authReducer";
 import appReducer from "./appReducer";
 
-
 let rootReducer = combineReducers({
   profilePage: profileReducer,
   dialogsPage: dialogsReducer,
@@ -18,10 +17,15 @@ let rootReducer = combineReducers({
   app: appReducer,
   form: reduxForm,
 })
- 
-type rootReducerType = typeof rootReducer
-export type appStateType = ReturnType<rootReducerType>
 
+
+export type appStateType = ReturnType<rootReducerType>
+type rootReducerType = typeof rootReducer
+type propertiesTypes<T> = T extends { [key: string] : infer U } ? U : never
+export type InferActionsTypes<T extends { [key: string] : (...args: any[]) => any}> = ReturnType<propertiesTypes<T>>
+
+
+ 
 // @ts-ignore
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(rootReducer, composeEnhancers(applyMiddleware(thunkMiddleware)))

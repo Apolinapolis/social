@@ -9,15 +9,6 @@ type FormControlPropsType = {
     children: React.ReactNode
 }
 
-export type loginFormValuesType = {
-    email:string
-    password: string
-    rememberMe:boolean
-    captcha:string 
-}
-
-type loginFormValuesTypeKeys = keyof loginFormValuesType
-
 export const FormControl:FC<FormControlPropsType> = ({meta:{touched, error}, children}) => {
 
     const hasError = touched && error;
@@ -39,11 +30,12 @@ const {input, meta, ...restProps} = props;
 return <FormControl {...props}><input {...input}{...restProps}/></FormControl>
 }
 
-export const сreateField = (
+export function сreateField<FormKeysType extends string>(
     placeholder:string | undefined, 
-    name:loginFormValuesTypeKeys, 
+    name:FormKeysType, 
     validate:Array<FieldValidatorType>, 
     component:string | React.FC | React.Component,
     props = {},
-    text = "") => (
-<Field placeholder={placeholder} name={name} validate={validate} component={component} {...props}/>)
+    text = "") {return (
+<Field placeholder={placeholder} name={name} validate={validate} component={component} {...props}/>
+)}

@@ -66,7 +66,4 @@ let mapStateToProps = (state:appStateType):mapStatePropsType => {
    }
 }
 
-export default compose<React.Component>(connect/* <dispatchPropsType, mapStatePropsType, ownPropsType, appStateType> */(mapStateToProps, 
-   {follow, unfollow, requestUsers}))(UsersComponent)
-
-   //   {follow, unfollow, setCurrentPage,toggleFollowingProgress, getUsers, getStatus}))(UsersComponent)
+export default compose<React.Component>(connect(mapStateToProps, {follow, unfollow, requestUsers}))(UsersComponent)
