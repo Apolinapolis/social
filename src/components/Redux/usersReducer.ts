@@ -1,17 +1,15 @@
 import { Dispatch } from "react";
 import { userType } from "../../types/types";
 import { updateObjinArr } from "../../utilits/objHelper";
-import { InferActionsTypes, appStateType } from "./reduxStore";
-import { ThunkAction } from "redux-thunk";
+import {InferActionsTypes, BaseThunkType} from "./reduxStore";
 import {usersAPI} from "../../API/users-API";
 
 
+type ThunkType = BaseThunkType<actionsType>
 type dispatchType = Dispatch<actionsType>
-type ThunkType = ThunkAction<Promise<void>, appStateType, unknown, actionsType>
-
 type initialStateType = typeof initialState
-
 type actionsType = InferActionsTypes<typeof actions>
+
 
 let initialState = {
   users: [] as Array<userType>,
@@ -21,7 +19,6 @@ let initialState = {
   isFetching: false,
   followingInProgress: [] as Array<number>,
 };
-
 
 const usersReducer = (state = initialState, action:actionsType):initialStateType => {
   switch (action.type) {

@@ -1,5 +1,5 @@
-import { applyMiddleware, combineReducers, compose, legacy_createStore as createStore } from "redux";
-import { thunk as thunkMiddleware} from "redux-thunk"
+import { Action, applyMiddleware, combineReducers, compose, legacy_createStore as createStore } from "redux";
+import {thunk as thunkMiddleware, ThunkAction} from "redux-thunk"
 import { reducer as reduxForm } from "redux-form";
 import sidebarReducer from "./sidebarReducer";
 import dialogsReducer from "./dialogsReducer";
@@ -18,7 +18,7 @@ let rootReducer = combineReducers({
   form: reduxForm,
 })
 
-
+export type BaseThunkType<A extends Action, R = Promise<void>> = ThunkAction<R, appStateType, unknown, A>
 export type appStateType = ReturnType<rootReducerType>
 type rootReducerType = typeof rootReducer
 type propertiesTypes<T> = T extends { [key: string] : infer U } ? U : never

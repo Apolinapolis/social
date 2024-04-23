@@ -1,17 +1,8 @@
-const SEND_MESSAGE = "SEND_MESSAGE"
+import {InferActionsTypes} from "./reduxStore";
+
 const diaPhoto = "https://thumbs.dreamstime.com/b/го-ова-бойскаута-м-а-шей-группы-90271267.jpg"
 
-type dialogsType = {
-  name: string
-  id: number
-  photo: string
-}
-
- type messageType = {
-  id: number
-  message: string
- }
-
+export const actions = {sendMessageCreator: (newMessageBody: string) => ({ type: "SEND_MESSAGE", newMessageBody } as const)}
 let initialState = {
   dialogs: [
     { name: "Diman", id: 1, photo: diaPhoto },
@@ -28,11 +19,9 @@ let initialState = {
   ] as Array<messageType> ,
 }
 
-export type initialStateType = typeof initialState
-
-const dialogsReducer = (state = initialState, action: any):initialStateType => {
+const dialogsReducer = (state = initialState, action: ActionsType):initialStateType => {
   switch (action.type) {
-    case SEND_MESSAGE:
+    case "SEND_MESSAGE":
       let body = action.newMessageBody;
       return { ...state, message: [...state.message, { id: 6, message: body }] }
     default:
@@ -40,11 +29,19 @@ const dialogsReducer = (state = initialState, action: any):initialStateType => {
   }
 }
 
-type sendMessageCreatorActionType = {
-  type: typeof SEND_MESSAGE
-  newMessageBody: string
+export default dialogsReducer;
+
+type dialogsType = {
+  name: string
+  id: number
+  photo: string
 }
 
-export const sendMessageCreator = (newMessageBody: string):sendMessageCreatorActionType => ({ type: SEND_MESSAGE, newMessageBody });
+type messageType = {
+  id: number
+  message: string
+}
 
-export default dialogsReducer;
+type ActionsType = InferActionsTypes<typeof actions>
+
+export type initialStateType = typeof initialState

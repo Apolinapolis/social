@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import Paginator from "../common/paginator/Paginator";
-import User from "./User";
 import { userType } from "../../types/types";
+import User from "./User"
 
 type propsType = {
   currentPage: number
