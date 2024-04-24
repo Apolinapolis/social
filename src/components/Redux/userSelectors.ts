@@ -11,8 +11,8 @@ export const getSuper = createSelector( getUsers,(users) => {
 export const getPageSize = (state:appStateType) => {
     return state.usersPage.pageSize
 }
-export const getTotalUsersCount = (state) => {
-    return state.usersPage.totalUsersCount
+export const getTotalUsersCount = (state: appStateType) => {
+    return state.usersPage.totalItemsCount
 }
 export const getCurrentPage = (state:appStateType) => {
     return state.usersPage.currentPage
