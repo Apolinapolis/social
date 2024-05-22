@@ -93,5 +93,5 @@ export default usersReducer;
 
 
 type ThunkType = BaseThunkType<actionsType>
-type initialStateType = typeof initialState
+export type initialStateType = typeof initialState
 type actionsType = InferActionsTypes<typeof actions>
