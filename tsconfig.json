@@ -1,12 +1,24 @@
+// {
+//   "compilerOptions": {
+//   "target": "es5",
+//   "lib": ["es6", "dom"],
+//   "jsx": "preserve",
+//   "module": "commonjs",
+//   "moduleResolution": "node",
+//   "experimentalDecorators": true,
+//   "allowSyntheticDefaultImports": true
+//   },
+//   "include": ["src"]
+//   }
+
 {
   "compilerOptions": {
-  "target": "es5",
-  "lib": ["es6", "dom"],
-  "jsx": "preserve",
-  "module": "commonjs",
-  "moduleResolution": "node",
-  "experimentalDecorators": true,
-  "allowSyntheticDefaultImports": true
+    "target": "es6",
+    "module": "esnext",
+    "jsx": "react",
+    "strict": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true
   },
   "include": ["src"]
-  }
+}
