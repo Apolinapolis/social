@@ -79,12 +79,12 @@ const followFlow = async(dispatch:Dispatch<actionsType>, userId:number, apiMetho
 
 export const follow = (userId:number):ThunkType => {
   return async (dispatch) => {
-    followFlow(dispatch, userId, usersAPI.follow.bind(usersAPI), actions.followSuccess)
+   await followFlow(dispatch, userId, usersAPI.follow.bind(usersAPI), actions.followSuccess)
 }};
 
 export const unfollow = (userId:number):ThunkType => {
   return async (dispatch) => {
-    followFlow(dispatch, userId, usersAPI.unfollow.bind(usersAPI), actions.unfollowSuccess)
+    await followFlow(dispatch, userId, usersAPI.unfollow.bind(usersAPI), actions.unfollowSuccess)
   };
 };
 

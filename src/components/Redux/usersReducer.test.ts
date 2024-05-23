@@ -1,3 +1,4 @@
+import usersReducer, { actions, initialStateType } from "./usersReducer"
 
 let initState: initialStateType;
 
@@ -38,4 +39,3 @@ test("unfollow success", () => {
 })
 
 
-import usersReducer, { actions, initialStateType } from "./usersReducer"
